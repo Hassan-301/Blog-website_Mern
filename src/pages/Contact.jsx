@@ -4,7 +4,6 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import "./Contact.css"
-import Footer from '../components/Footer'
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,9 +18,7 @@ function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData)
-    // Reset form after submission
     setFormData({ name: "", email: "", message: "" })
   }
 
@@ -33,7 +30,7 @@ function Contact() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Drop Us a Message
+        Get in Touch
       </motion.h1>
 
       <div className="contact-content">
@@ -54,6 +51,7 @@ function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="Your Name"
+                className="input-field"
               />
             </div>
             <div className="form-group">
@@ -66,6 +64,7 @@ function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="your@email.com"
+                className="input-field"
               />
             </div>
             <div className="form-group">
@@ -77,11 +76,12 @@ function Contact() {
                 onChange={handleChange}
                 required
                 placeholder="Your message here..."
+                className="textarea-field"
               ></textarea>
             </div>
-            <button type="submit" className="submit-btn">
-              Send Message
+            <button type="submit" className="submit-btn modern-btn">
               <Send size={18} />
+              Send
             </button>
           </form>
         </motion.div>
@@ -92,7 +92,7 @@ function Contact() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h2>Contact Information</h2>
+          <h2>Contact Us</h2>
           <div className="contact-info">
             <p>
               <Mail size={18} />
@@ -104,14 +104,14 @@ function Contact() {
             </p>
             <p>
               <MapPin size={18} />
-              <span>123,ABC Street, Islamabad</span>
+              <span>123, ABC Street, Islamabad</span>
             </p>
           </div>
-          <div className="contact-map">
-            {/* Replace with an actual map component if desired */}
+          <div className="contact-map modern-map">
             <img
               src="map.JPG"
               alt="Map"
+              className="map-image"
             />
           </div>
         </motion.div>
@@ -121,4 +121,3 @@ function Contact() {
 }
 
 export default Contact
-

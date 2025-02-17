@@ -24,10 +24,13 @@ function App() {
         try {
           const response = await api.get("/verify")
           setUser(response.data.user)
+          console.log("User verified:", response.data.user)
         } catch (error) {
           console.error("Token verification failed:", error)
           localStorage.removeItem("token")
         }
+      } else {
+        console.log("No token found")
       }
     }
 

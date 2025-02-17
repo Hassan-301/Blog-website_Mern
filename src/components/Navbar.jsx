@@ -1,8 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Instagram, Youtube, Twitter } from "lucide-react"
 import "./Navbar.css"
 
 function Navbar({ user, handleLogout }) {
+  const location = useLocation();
+
+
+  const isOnAboutOrContactPage = location.pathname === "/about" || location.pathname === "/contact";
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -33,7 +38,7 @@ function Navbar({ user, handleLogout }) {
             </a>
           </div>
 
-          {user ? (
+          {user && !isOnAboutOrContactPage && (
             <>
               <Link to="/create" className="add-post-btn">
                 Add Post
@@ -42,7 +47,8 @@ function Navbar({ user, handleLogout }) {
                 Logout
               </button>
             </>
-          ) : (
+          )}
+          {!user && (
             <Link to="/login" className="auth-link">
               Login
             </Link>

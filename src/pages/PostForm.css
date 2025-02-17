@@ -2,6 +2,9 @@
     padding: 2rem;
     max-width: 800px;
     margin: 0 auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .post-form {
@@ -70,18 +73,22 @@
   }
   
   .submit-btn {
-    background-color: var(--accent);
+    background-color: black;
     color: white;
     border: none;
+    border-radius: 6px;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s, transform 0.2s;
   }
   
   .submit-btn:hover {
-    background-color: var(--accent-hover);
+    background-color: #333;
+    transform: scale(1.05);
   }
   
   .cancel-btn {
     background-color: #f1f5f9;
-    color: var(--text);
+    color: #333;
     border: none;
   }
   

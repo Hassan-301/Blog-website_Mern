@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import React, { useState, useEffect, useCallback } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import api from "../api/axios"
 import "./PostForm.css"
@@ -11,18 +11,18 @@ function EditPost() {
   const navigate = useNavigate()
   const { id } = useParams()
 
-  useEffect(() => {
-    fetchPost()
-  }, [fetchPost])
-
-  const fetchPost = async () => {
+  const fetchPost = useCallback(async () => {
     try {
       const response = await api.get(`/posts/${id}`)
       setPost(response.data)
     } catch (err) {
       setError("Failed to fetch post")
     }
-  }
+  }, [id])
+
+  useEffect(() => {
+    fetchPost()
+  }, [fetchPost])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -71,4 +71,3 @@ function EditPost() {
 }
 
 export default EditPost
-
