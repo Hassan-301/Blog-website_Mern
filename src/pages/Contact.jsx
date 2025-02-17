@@ -109,7 +109,7 @@ function Contact() {
           </div>
           <div className="contact-map modern-map">
             <img
-              src="map.JPG"
+              src="map.jpg"
               alt="Map"
               className="map-image"
             />
