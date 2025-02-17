@@ -7,7 +7,7 @@ const teamMembers = [
     name: "Ahmad",
     role: "Founder & Lead Developer",
     bio: "Passionate about creating intuitive software solutions.",
-    image: "about.JPG",
+    image: "about.jpg",
     social: {
       twitter: "https://twitter.com",
       github: "https://github.com",
@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Ali",
     role: "AI Specialist",
     bio: "Exploring the frontiers of machine learning and AI applications.",
-    image: "about2.JPG",
+    image: "about2.jpg",
     social: {
       twitter: "https://twitter.com",
       github: "https://github.com",
@@ -29,7 +29,7 @@ const teamMembers = [
     name: "Aliza",
     role: "UX/UI Designer",
     bio: "Crafting seamless user experiences for cutting-edge tech products.",
-    image: "about4.JPG",
+    image: "about4.jpg",
     social: {
       twitter: "https://twitter.com",
       github: "https://github.com",
